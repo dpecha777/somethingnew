@@ -3,7 +3,7 @@ import { useThemeColor } from '../../hooks/useThemeColor';
 
 export default function Index() {
   const neco = useThemeColor('brand');
-  console.log('neco :>> ', neco);
+
   return (
     <View
       style={{
