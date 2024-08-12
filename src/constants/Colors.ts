@@ -1,3 +1,5 @@
+import { Theme } from '@react-navigation/native';
+
 type AppColorsRecord = Record<keyof typeof DARK, string>;
 
 const DARK = {
@@ -30,7 +32,25 @@ export const appColors = {
   dark: DARK,
 };
 
-// const btnHeight = {
-//   btnHeightBig: '50',
-//   btnHeightSmall: '22',
-// };
+export const darkNavigationTheme: Theme = {
+  dark: true,
+  colors: {
+    primary: DARK.brand,
+    background: DARK.primaryBg,
+    card: DARK.secondaryBg,
+    text: DARK.primaryTxt,
+    border: DARK.outline,
+    notification: DARK.brand,
+  },
+};
+export const lightNavigationTheme: Theme = {
+  dark: false,
+  colors: {
+    primary: LIGHT.brand,
+    background: LIGHT.primaryBg,
+    card: LIGHT.secondaryBg,
+    text: LIGHT.primaryTxt,
+    border: LIGHT.outline,
+    notification: LIGHT.brand,
+  },
+};

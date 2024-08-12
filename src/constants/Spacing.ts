@@ -1,5 +1,6 @@
+export type AppSpacingUnion = keyof typeof appSpacing;
+
 export const appSpacing = {
-  0: 0,
   xxs: 4,
   xs: 10,
   sm: 16,
