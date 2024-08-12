@@ -18,7 +18,7 @@ export const Text = ({
   return (
     <RNText
       style={{
-        ...styles[variant],
+        ...AppTextStyles[variant],
         color: color === 'primary' ? primaryTextColor : secondaryTextColor,
       }}
     >
@@ -27,7 +27,7 @@ export const Text = ({
   );
 };
 
-const styles = StyleSheet.create({
+export const AppTextStyles = StyleSheet.create({
   highlight: {
     fontWeight: 700,
     lineHeight: 20.15,

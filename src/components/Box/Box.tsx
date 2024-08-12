@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ViewStyle } from 'react-native';
+import { StyleProp, View, ViewStyle } from 'react-native';
 import { appSpacing, AppSpacingUnion } from '../../constants/Spacing';
 
 export type BoxProps = {
@@ -7,7 +7,7 @@ export type BoxProps = {
   justifyContent?: ViewStyle['justifyContent'];
   alignItems?: ViewStyle['alignItems'];
   flexDirection?: ViewStyle['flexDirection'];
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 
   margin?: AppSpacingUnion;
   marginVertical?: AppSpacingUnion;

@@ -1,8 +1,12 @@
-import { Box, Button, Spacer, Text } from '../../components';
+import { useState } from 'react';
+import { Box, Button, Input, Spacer, Text } from '../../components';
+import { ScrollView } from 'react-native';
 
 export default function Index() {
+  const [textValue, setTextValue] = useState('');
+  const [disabledTextValue, setDisabledTextValue] = useState('');
   return (
-    <>
+    <ScrollView>
       <Box justifyContent='center' padding='md'>
         <Text variant='h1' color='primary'>
           Typography
@@ -49,6 +53,25 @@ export default function Index() {
           Button
         </Button>
       </Box>
-    </>
+
+      <Box padding='md'>
+        <Text variant='h1' color='primary'>
+          Inputs
+        </Text>
+        <Spacer />
+        <Input
+          placeholder='Text input'
+          onChangeText={setTextValue}
+          value={textValue}
+        />
+        <Spacer />
+        <Input
+          disabled
+          placeholder='Disabled input'
+          onChangeText={setDisabledTextValue}
+          value={disabledTextValue}
+        />
+      </Box>
+    </ScrollView>
   );
 }

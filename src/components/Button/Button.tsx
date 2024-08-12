@@ -25,6 +25,7 @@ export const Button = ({
   const backgroundColor = useThemeColor('brand');
   const borderColor = useThemeColor('outline');
   const textColor = useThemeColor('primaryTxt');
+  const primaryBtnTextColor = useThemeColor('primaryTxt', 'dark');
 
   const primary: ViewStyle = {
     backgroundColor: backgroundColor,
@@ -56,7 +57,7 @@ export const Button = ({
           style={[
             styles.baseText,
             small ? styles.smallText : undefined,
-            { color: textColor },
+            { color: variant === 'primary' ? primaryBtnTextColor : textColor },
           ]}
         >
           {children}
