@@ -7,7 +7,7 @@ const DARK = {
   white: '#FFFFFF',
   primaryBg: '#121212',
   secondaryBg: '#262626',
-  modalBg: '#121212',
+  modalBg: 'rgba(18, 18, 18, 0.8)',
   primaryTxt: '#FFFFFF',
   secondaryTxt: '#808080',
   system: '#808080',

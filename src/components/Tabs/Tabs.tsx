@@ -9,8 +9,9 @@ import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { appSpacing } from '../../constants/Spacing';
 import { Text } from '../Text/Text';
 import { useThemeColor } from '../../hooks/useThemeColor';
+import { BORDER_WIDHT } from '../../constants/Border';
 
-type TabId = string | number;
+export type TabId = string | number;
 
 type TabContextType = {
   activeTabId: TabId | null;
@@ -83,7 +84,7 @@ const Button: React.FC<ButtonProps> = ({ label, id }) => {
       style={[
         styles.tabButton,
         isActive && {
-          borderBottomWidth: 2,
+          borderBottomWidth: BORDER_WIDHT,
           borderBottomColor: brandColor,
         },
       ]}
@@ -121,7 +122,6 @@ const styles = StyleSheet.create({
   },
   tabContent: {
     flex: 1,
-    padding: 20,
   },
 });
 

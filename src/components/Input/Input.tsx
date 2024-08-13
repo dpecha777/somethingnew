@@ -3,7 +3,7 @@ import {
   StyleSheet,
   TextInputProps,
 } from 'react-native';
-import { radius } from '../../constants/Radius';
+import { BORDER_WIDHT, radius } from '../../constants/Border';
 import { useThemeColor } from '../../hooks/useThemeColor';
 import { useState } from 'react';
 import { AppTextStyles } from '../Text/Text';
@@ -72,7 +72,7 @@ export const Input = ({
 const styles = StyleSheet.create({
   baseInput: {
     borderRadius: radius.normal,
-    borderWidth: 2,
+    borderWidth: BORDER_WIDHT,
     height: INPUT_HEIGHT,
   },
   disabled: {

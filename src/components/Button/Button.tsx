@@ -1,5 +1,5 @@
 import { Text, Pressable, StyleSheet, ViewStyle } from 'react-native';
-import { radius } from '../../constants/Radius';
+import { BORDER_WIDHT, radius } from '../../constants/Border';
 import { Box } from '../Box/Box';
 import { useThemeColor } from '../../hooks/useThemeColor';
 
@@ -69,13 +69,14 @@ export const Button = ({
 
 const styles = StyleSheet.create({
   base: {
+    maxHeight: BTN_HEIGHT,
     height: BTN_HEIGHT,
     backgroundColor: 'blue',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: radius.normal,
     alignSelf: 'flex-start',
-    borderWidth: 2,
+    borderWidth: BORDER_WIDHT,
   },
   baseText: {
     fontSize: 12,
