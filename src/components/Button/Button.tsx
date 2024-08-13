@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     fontWeight: 800,
   },
   fullWidht: {
+    flex: 1,
     width: '100%',
   },
   small: {

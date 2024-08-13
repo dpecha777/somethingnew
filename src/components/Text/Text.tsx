@@ -1,26 +1,40 @@
 import { Text as RNText, StyleSheet } from 'react-native';
 import { useThemeColor } from '../../hooks/useThemeColor';
 
+type TextColors = 'primary' | 'secondary' | 'brand';
+
 export type TextProps = {
-  variant?: 'highlight' | 'regular' | 'h1';
-  color?: 'primary' | 'secondary';
   children: string;
+  variant?: 'highlight' | 'regular' | 'h1';
+  color?: TextColors;
+  center?: boolean;
 };
 
 export const Text = ({
   children,
   color = 'primary',
   variant = 'regular',
+  center = false,
 }: TextProps) => {
   const primaryTextColor = useThemeColor('primaryTxt');
   const secondaryTextColor = useThemeColor('secondaryTxt');
+  const brandTextColor = useThemeColor('brand');
+
+  const colorMap: Record<TextColors, string> = {
+    primary: primaryTextColor,
+    secondary: secondaryTextColor,
+    brand: brandTextColor,
+  };
 
   return (
     <RNText
-      style={{
-        ...AppTextStyles[variant],
-        color: color === 'primary' ? primaryTextColor : secondaryTextColor,
-      }}
+      style={[
+        {
+          ...AppTextStyles[variant],
+          color: colorMap[color],
+        },
+        center && AppTextStyles.center,
+      ]}
     >
       {children}
     </RNText>
@@ -42,5 +56,8 @@ export const AppTextStyles = StyleSheet.create({
     fontWeight: 700,
     fontSize: 22,
     lineHeight: 32,
+  },
+  center: {
+    textAlign: 'center',
   },
 });

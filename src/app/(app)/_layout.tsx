@@ -4,6 +4,7 @@ export default function Layout() {
   return (
     <Tabs>
       <Tabs.Screen name='index' />
+      <Tabs.Screen name='style' />
     </Tabs>
   );
 }
