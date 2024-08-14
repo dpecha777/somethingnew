@@ -48,3 +48,4 @@
 ### **Nice to have features**
 
 - [] Implement Sentry or other crashlytic to report errors
+- [] i18n for translations
