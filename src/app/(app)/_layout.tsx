@@ -67,7 +67,7 @@ export default function Layout() {
               showIndicator={false}
               focused
             >
-              <PlusIcon />
+              <PlusIcon color='white' />
             </TabBarIconContainer>
           ),
         }}
