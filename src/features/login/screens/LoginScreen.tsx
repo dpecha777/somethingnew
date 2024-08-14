@@ -1,5 +1,5 @@
 import { Box, Button, Spacer, Tabs, Text } from '../../../components';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, Keyboard } from 'react-native';
 import { PhoneSystem } from '../../../images/svg/PhoneSystem';
 import { Modal, useModal } from '../../../components/Modal/Modal';
 import { useState } from 'react';
@@ -26,6 +26,13 @@ export const LoginScreen = () => {
     setDefaultTab('signup');
     present();
   };
+
+  Keyboard.addListener('keyboardDidShow', () => {
+    ref.current?.snapToIndex(4);
+  });
+  Keyboard.addListener('keyboardDidHide', () => {
+    ref.current?.snapToIndex(0);
+  });
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
