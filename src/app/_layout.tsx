@@ -1,8 +1,6 @@
 import { Theme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { useColorScheme } from '@/src/hooks/useColorScheme';
 import { darkNavigationTheme, lightNavigationTheme } from '../constants/Colors';
@@ -10,6 +8,8 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StyleSheet } from 'react-native';
 import { useThemeColor } from '../hooks/useThemeColor';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { APIProvider } from '../api';
+import { AuthProvider } from '../contexts/AuthProvider/AuthProvider';
 
 export const unstable_settings = {
   initialRouteName: '(app)',
@@ -19,21 +19,6 @@ export const unstable_settings = {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded] = useFonts({
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    SpaceMono: require('../../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
-
   return (
     <Providers>
       <Stack>
@@ -54,7 +39,11 @@ function Providers({ children }: { children: React.ReactNode }) {
   return (
     <GestureHandlerRootView style={[styles.container, { backgroundColor }]}>
       <ThemeProvider value={theme}>
-        <BottomSheetModalProvider>{children}</BottomSheetModalProvider>
+        <APIProvider>
+          <AuthProvider>
+            <BottomSheetModalProvider>{children}</BottomSheetModalProvider>
+          </AuthProvider>
+        </APIProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
   );

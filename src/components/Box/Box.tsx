@@ -4,7 +4,7 @@ import { AppSpacingUnion } from '../../constants/Spacing';
 import { getSpacingStyles } from './helpers/getSpacingStyles';
 
 export type BoxProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   justifyContent?: ViewStyle['justifyContent'];
   alignItems?: ViewStyle['alignItems'];
   flexDirection?: ViewStyle['flexDirection'];

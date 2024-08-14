@@ -78,9 +78,12 @@ export const Modal = React.forwardRef(
         {...props}
         {...detachedProps}
         style={modalTopBorderStyles}
-        backgroundStyle={{
-          backgroundColor: modalBg,
-        }}
+        backgroundStyle={[
+          styles.modalShadow,
+          {
+            backgroundColor: modalBg,
+          },
+        ]}
         ref={modal.ref}
         index={0}
         snapPoints={snapPoints}
@@ -128,6 +131,16 @@ const getDetachedProps = (detached: boolean) => {
 };
 
 const styles = StyleSheet.create({
+  modalShadow: {
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: -36,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 36,
+    elevation: -26,
+  },
   handle: {
     height: 3,
     width: 40,

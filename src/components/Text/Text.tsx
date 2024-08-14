@@ -46,16 +46,19 @@ export const AppTextStyles = StyleSheet.create({
     fontWeight: 700,
     lineHeight: 20.15,
     fontSize: 14,
+    fontFamily: 'ObjektivMk1',
   },
   regular: {
     fontWeight: 'normal',
     lineHeight: 20.15,
     fontSize: 14,
+    fontFamily: 'ObjektivMk1',
   },
   h1: {
     fontWeight: 700,
     fontSize: 22,
     lineHeight: 32,
+    fontFamily: 'ObjektivMk1',
   },
   center: {
     textAlign: 'center',

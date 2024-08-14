@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Button, Input, Spacer, Text, Tabs } from '../../components';
+import { Box, Button, Input, Spacer, Text, Tabs } from '../components';
 import { ScrollView } from 'react-native';
 
 export default function Style() {
@@ -20,17 +20,17 @@ export default function Style() {
           </Tabs.Header>
           <Tabs.Content id='tab1'>
             <Box>
-              <Text>Obsah pro Tab 1</Text>
+              <Text>Content Tab 1</Text>
             </Box>
           </Tabs.Content>
           <Tabs.Content id='tab2'>
             <Box>
-              <Text>Obsah pro Tab 2</Text>
+              <Text>Content Tab 2</Text>
             </Box>
           </Tabs.Content>
           <Tabs.Content id='tab3'>
             <Box>
-              <Text>Obsah pro Tab 3</Text>
+              <Text>Content Tab 3</Text>
             </Box>
           </Tabs.Content>
         </Tabs.Container>

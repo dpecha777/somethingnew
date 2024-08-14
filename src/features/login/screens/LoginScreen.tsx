@@ -60,7 +60,7 @@ export const LoginScreen = () => {
         </Button>
       </Box>
 
-      <Modal snapPoints={['50%']} ref={ref}>
+      <Modal snapPoints={['60%', '70%', '80%', '90%', '100%']} ref={ref}>
         <Box paddingHorizontal='lg' fullHeight>
           <Tabs.Container>
             <Tabs.Header defaultTabId={defaultTab}>
