@@ -4,9 +4,8 @@ import { Box, Button, Spacer, TabId, Tabs } from '../../../components';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormInput } from '../../../components';
-import { Alert } from 'react-native';
 import { useAuth } from '../../../contexts/AuthProvider/AuthProvider';
-import { router } from 'expo-router';
+import { useRouter } from 'expo-router';
 
 type LoginTabContentProps = {
   tabId: TabId;
@@ -26,6 +25,7 @@ export const LoginTabContent = ({
   tabId,
   dismissModal,
 }: LoginTabContentProps) => {
+  const router = useRouter();
   const { control, handleSubmit } = useForm<LoginFormSchemaType>({
     mode: 'onSubmit',
     resolver: zodResolver(loginFormSchema),
@@ -43,7 +43,8 @@ export const LoginTabContent = ({
       onError: (err) => {
         const error = err as AuthErrorResponse;
         const errorMessage = error.response?.data?.message;
-        Alert.alert('Error', errorMessage);
+        dismissModal();
+        router.push({ pathname: '/error', params: { error: errorMessage } });
       },
     });
   });

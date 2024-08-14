@@ -15,16 +15,22 @@ export const unstable_settings = {
   initialRouteName: '(app)',
 };
 
+export { ErrorBoundary } from 'expo-router';
+
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   return (
     <Providers>
-      <Stack>
-        <Stack.Screen name='(app)' options={{ headerShown: false }} />
-        <Stack.Screen name='login' options={{ headerShown: false }} />
-        <Stack.Screen name='+not-found' />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name='(app)' options={{ title: 'Dashboard' }} />
+        <Stack.Screen name='login' options={{ title: 'Login' }} />
+        <Stack.Screen name='error' options={{ title: 'Error' }} />
+        <Stack.Screen
+          name='+not-found'
+          options={{ headerShown: true, title: 'Login' }}
+        />
       </Stack>
     </Providers>
   );
