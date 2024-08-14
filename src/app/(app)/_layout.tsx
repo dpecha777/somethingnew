@@ -17,6 +17,8 @@ export default function Layout() {
   const [loaded] = useFonts({
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     ObjektivMk1: require('../../../assets/fonts/ObjektivMk1_Trial_Rg.ttf'),
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    ObjektivMk1Bold: require('../../../assets/fonts/ObjektivMk1_Trial_Bd.ttf'),
   });
   useEffect(() => {
     if (loaded && !isLoading) {
@@ -35,6 +37,7 @@ export default function Layout() {
   return (
     <Tabs
       screenOptions={{
+        headerShown: false,
         tabBarStyle: {
           borderTopColor: outlineColor,
           borderTopWidth: BORDER_WIDHT,

@@ -26,10 +26,12 @@
 - [x] Implement Authorized state. After login, the user should be redirected to the main screen
 - [ ] **Optional**: Implement 'Sign up'
 
+- [ ] Implement refresh token
+
 ### **Feature 2: Task List**
 
 - [ ] Implement UI according to the design
-- [ ] Connect the API
+- [x] Connect the API
 - [ ] Filter tasks by author
 - [ ] **Optional**: Implement toggle view mode
 - [ ] **Optional**: Filter by priority
@@ -47,5 +49,6 @@
 
 ### **Nice to have features**
 
-- [] Implement Sentry or other crashlytic to report errors
-- [] i18n for translations
+- [ ] Implement Sentry or other crashlytic to report errors
+- [ ] i18n for translations
+- [ ] Refactor and create Stylesheet with theme (colors, border values, ... ) as prop

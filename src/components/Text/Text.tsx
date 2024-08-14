@@ -1,13 +1,18 @@
-import { Text as RNText, StyleSheet } from 'react-native';
+import {
+  Text as RNText,
+  TextProps as RNTextProps,
+  StyleSheet,
+} from 'react-native';
 import { useThemeColor } from '../../hooks/useThemeColor';
 
-type TextColors = 'primary' | 'secondary' | 'brand';
+type TextColors = 'primary' | 'secondary' | 'brand' | 'white';
 
 export type TextProps = {
-  children: string;
-  variant?: 'highlight' | 'regular' | 'h1';
+  children: string | number;
+  variant?: 'highlight' | 'regular' | 'h1' | 'tag';
   color?: TextColors;
   center?: boolean;
+  numberOfLines?: RNTextProps['numberOfLines'];
 };
 
 export const Text = ({
@@ -15,15 +20,18 @@ export const Text = ({
   color = 'primary',
   variant = 'regular',
   center = false,
+  ...props
 }: TextProps) => {
   const primaryTextColor = useThemeColor('primaryTxt');
   const secondaryTextColor = useThemeColor('secondaryTxt');
   const brandTextColor = useThemeColor('brand');
+  const whiteTextColor = useThemeColor('white');
 
   const colorMap: Record<TextColors, string> = {
     primary: primaryTextColor,
     secondary: secondaryTextColor,
     brand: brandTextColor,
+    white: whiteTextColor,
   };
 
   return (
@@ -35,6 +43,7 @@ export const Text = ({
         },
         center && AppTextStyles.center,
       ]}
+      {...props}
     >
       {children}
     </RNText>
@@ -43,22 +52,24 @@ export const Text = ({
 
 export const AppTextStyles = StyleSheet.create({
   highlight: {
-    fontWeight: 700,
     lineHeight: 20.15,
     fontSize: 14,
-    fontFamily: 'ObjektivMk1',
+    fontFamily: 'ObjektivMk1Bold',
   },
   regular: {
-    fontWeight: 'normal',
     lineHeight: 20.15,
     fontSize: 14,
     fontFamily: 'ObjektivMk1',
   },
   h1: {
-    fontWeight: 700,
     fontSize: 22,
     lineHeight: 32,
-    fontFamily: 'ObjektivMk1',
+    fontFamily: 'ObjektivMk1Bold',
+  },
+  tag: {
+    fontSize: 10,
+    lineHeight: 14,
+    fontFamily: 'ObjektivMk1Bold',
   },
   center: {
     textAlign: 'center',

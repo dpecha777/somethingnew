@@ -1,5 +1,5 @@
-import { Text } from '../../components';
+import { TaskDashboardScreen } from '../../features/tasks/screens/TasksDashboardScreen';
 
 export default function Index() {
-  return <Text>Index</Text>;
+  return <TaskDashboardScreen />;
 }

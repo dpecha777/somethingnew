@@ -26,10 +26,14 @@ export default function RootLayout() {
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name='(app)' options={{ title: 'Dashboard' }} />
         <Stack.Screen name='login' options={{ title: 'Login' }} />
+        <Stack.Screen
+          name='style'
+          options={{ headerShown: true, title: 'App components' }}
+        />
         <Stack.Screen name='error' options={{ title: 'Error' }} />
         <Stack.Screen
           name='+not-found'
-          options={{ headerShown: true, title: 'Login' }}
+          options={{ headerShown: true, title: 'Not found' }}
         />
       </Stack>
     </Providers>
