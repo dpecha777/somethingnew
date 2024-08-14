@@ -1,12 +1,14 @@
 import { Alert, FlatList } from 'react-native';
 import { Spacer, Tabs } from '../../../components';
 import { DASHBOARD_TABS } from '../constants';
-import { usePost } from '../../../api/task';
+import { Task } from '../../../api';
 import { TaskListItem } from './TaskListItem';
 
-export const BacklogTabContent = () => {
-  const { data: tasks } = usePost();
+type BacklogTabContentProps = {
+  tasks: Task[] | undefined;
+};
 
+export const BacklogTabContent = ({ tasks = [] }: BacklogTabContentProps) => {
   return (
     <Tabs.Content id={DASHBOARD_TABS.backlog}>
       <FlatList

@@ -7,8 +7,8 @@ import type { Task } from './types';
 type Variables = undefined;
 type TasksResponse = Task[];
 
-export const usePost = createQuery<TasksResponse, Variables, AxiosError>({
-  queryKey: ['posts'],
+export const useTasks = createQuery<TasksResponse, Variables, AxiosError>({
+  queryKey: ['tasks'],
   fetcher: async () => {
     return client.get(`/tasks`).then((response) => response.data.data);
   },

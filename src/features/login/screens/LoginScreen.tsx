@@ -1,7 +1,14 @@
-import { Box, Button, Spacer, Tabs, Text } from '../../../components';
+import {
+  Box,
+  Button,
+  Spacer,
+  Tabs,
+  Text,
+  Modal,
+  useModal,
+} from '../../../components';
 import { SafeAreaView, Keyboard } from 'react-native';
 import { PhoneSystem } from '../../../images/svg/PhoneSystem';
-import { Modal, useModal } from '../../../components/Modal/Modal';
 import { useState } from 'react';
 import { LoginTabContent } from '../components/LoginTabContent';
 import { SigninTabContent } from '../components/SignInTabContant';

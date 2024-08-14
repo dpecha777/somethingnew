@@ -30,9 +30,9 @@
 
 ### **Feature 2: Task List**
 
-- [ ] Implement UI according to the design
+- [x] Implement UI according to the design
 - [x] Connect the API
-- [ ] Filter tasks by author
+- [x] Filter tasks by author
 - [ ] **Optional**: Implement toggle view mode
 - [ ] **Optional**: Filter by priority
 

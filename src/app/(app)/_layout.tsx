@@ -8,9 +8,10 @@ import { Alert } from 'react-native';
 import { TabBarIconContainer } from './_components/TabBarIconContainer';
 import { BORDER_WIDHT } from '../../constants/Border';
 import { GridIcon, PlusIcon, UserIcon } from '../../icons';
+import { client } from '../../api';
 
 export default function Layout() {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading, logout } = useAuth();
   const outlineColor = useThemeColor('outline');
   const bgColor = useThemeColor('primaryBg');
 
@@ -33,6 +34,19 @@ export default function Layout() {
   if (!isAuthenticated) {
     return <Redirect href='/login' />;
   }
+
+  // TODO: Add token refresh logic
+  client.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    (error) => {
+      if (error.response.status === 401) {
+        logout();
+      }
+      return error;
+    },
+  );
 
   return (
     <Tabs

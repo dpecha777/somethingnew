@@ -9,7 +9,7 @@ type TextColors = 'primary' | 'secondary' | 'brand' | 'white';
 
 export type TextProps = {
   children: string | number;
-  variant?: 'highlight' | 'regular' | 'h1' | 'tag';
+  variant?: 'highlight' | 'regular' | 'h1' | 'tag' | 'button';
   color?: TextColors;
   center?: boolean;
   numberOfLines?: RNTextProps['numberOfLines'];
@@ -73,5 +73,12 @@ export const AppTextStyles = StyleSheet.create({
   },
   center: {
     textAlign: 'center',
+  },
+  button: {
+    fontSize: 12,
+    lineHeight: 14,
+    letterSpacing: 0.85,
+    textTransform: 'uppercase',
+    fontFamily: 'ObjektivMk1Bold',
   },
 });
